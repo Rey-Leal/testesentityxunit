@@ -1,0 +1,48 @@
+﻿@model TestesEntityMVC.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+<div class="d-flex justify-content-center align-items-center py-5">
+    <div class="card" style="width: 24rem;">
+        <div class="card-body">
+            <h2 class="card-title text-center">Login</h2>
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                // Previne ataques CSRF
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.Message
+                    </div>
+                }
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(a => a.email, new { @class = "form-label" })
+                    @Html.TextBoxFor(a => a.email, new { @class = "form-control", placeholder = "email" })
+                    @Html.ValidationMessageFor(a => a.email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(a => a.senha, new { @class = "form-label" })
+                    @Html.PasswordFor(a => a.senha, new { @class = "form-control", placeholder = "password" })
+                    @Html.ValidationMessageFor(a => a.senha, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="d-grid">
+                    <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                </div>
+
+                @if (ViewBag.MensagemDeErro != null)
+                {
+                    <br />
+                    <div class="alert alert-danger">
+                        @ViewBag.MensagemDeErro
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
