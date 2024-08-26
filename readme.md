@@ -1,10 +1,10 @@
-# Testes Entity Framework - MVC
+# Testes Entity Framework - MVC - xUnit
 
 ![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
 
 ## Introdução
 Este projeto .NET é estruturado através da Arquitetura MVC e demonstra a implementação de operações CRUD (Create, Read, Update, Delete) 
-persistidas em uma base de dados SQL Server através do Entity Framework.
+persistidas em uma base de dados SQL Server através do Entity Framework, uso de testes unitários xUnit.
 Também possui aplicação de interface login segura, bloqueando qualquer tentativa de acesso indevido ou forçado, bem como uso de Filters e BaseControllers.
 Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblioteca de ícones.
 
@@ -13,6 +13,7 @@ Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblio
 * Entity Framework
 * SQL Server
 * Arquitetura MVC
+* xUnit
 * Filters e BaseControllers
 * Bootstrap
 
