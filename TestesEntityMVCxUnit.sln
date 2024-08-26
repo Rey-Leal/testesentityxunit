@@ -5,12 +5,12 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityMVC", "EntityMVC\EntityMVC.csproj", "{85E3F914-D6EB-4808-A860-B3F40B51DDCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityMVCTestes", "EntityMVCTestes\EntityMVCTestes.csproj", "{C1CC61C3-2575-4968-B7D1-5ECB32EF6CE2}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD8ECC91-F8C5-4AD4-B140-6A01BEC7AFAE}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityMVCTestes", "EntityMVCTestes\EntityMVCTestes.csproj", "{C1CC61C3-2575-4968-B7D1-5ECB32EF6CE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

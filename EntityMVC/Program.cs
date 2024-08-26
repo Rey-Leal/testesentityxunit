@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Session;
 
 using System.Globalization;
 using Microsoft.EntityFrameworkCore;
-using TestesEntityMVC.Data;
+using EntityMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

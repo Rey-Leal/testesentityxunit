@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TestesEntityMVC.Filters;
+using EntityMVC.Filters;
 
-namespace TestesEntityMVC.Controllers
+namespace EntityMVC.Controllers
 {
     [UsuarioLogadoFilter]
     public class BaseController : Controller

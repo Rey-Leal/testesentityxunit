@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace TestesEntityMVC.Filters
+namespace EntityMVC.Filters
 {
     public class UsuarioLogadoFilter : ActionFilterAttribute
     {

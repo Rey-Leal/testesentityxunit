@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TestesEntityMVC.Data;
-using TestesEntityMVC.Models;
+using EntityMVC.Data;
+using EntityMVC.Models;
 
-namespace TestesEntityMVC.Controllers
+namespace EntityMVC.Controllers
 {
     public class UsuarioController : BaseController
     {

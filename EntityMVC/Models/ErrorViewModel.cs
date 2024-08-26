@@ -1,4 +1,4 @@
-namespace TestesEntityMVC.Models
+namespace EntityMVC.Models
 {
     public class ErrorViewModel
     {

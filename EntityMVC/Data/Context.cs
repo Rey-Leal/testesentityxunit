@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TestesEntityMVC.Models;
+using EntityMVC.Models;
 
-namespace TestesEntityMVC.Data
+namespace EntityMVC.Data
 {
     public class Context : DbContext
     {
@@ -14,8 +14,8 @@ namespace TestesEntityMVC.Data
         {
         }
 
-        public DbSet<TestesEntityMVC.Models.Grupo> Grupo { get; set; } = default!;
-        public DbSet<TestesEntityMVC.Models.Produto> Produto { get; set; } = default!;
-        public DbSet<TestesEntityMVC.Models.Usuario> Usuario { get; set; } = default!;
+        public DbSet<EntityMVC.Models.Grupo> Grupo { get; set; } = default!;
+        public DbSet<EntityMVC.Models.Produto> Produto { get; set; } = default!;
+        public DbSet<EntityMVC.Models.Usuario> Usuario { get; set; } = default!;
     }
 }
