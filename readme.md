@@ -8,6 +8,7 @@ persistidas em uma base de dados SQL Server através do Entity Framework.
 TDD desenvolvido através do uso de testes unitários utilizando xUnit.
 Também possui aplicação de interface login segura, bloqueando qualquer tentativa de acesso indevido ou forçado, bem como uso de Filters e BaseControllers.
 Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblioteca de ícones.
+AS imagens da tela inicial são obtidas randomicamente de forma assíncrona através do acesso a API Dog.Ceo.
 
 ### Tecnologias Utilizadas:
 * .NET
@@ -15,13 +16,13 @@ Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblio
 * SQL Server
 * Arquitetura MVC
 * TDD
+* API
 * Filters e BaseControllers
 * Bootstrap
 
 ### TODO
 Nas próximas etapas serão desenvolvidos neste projeto: 
 * Controle e armazenamento de Log de acesso através do MongoDB
-* Consulta de CEP e dados cadastrais via API externa do Correios
 
 ## O que é o Entity Framework?
 O Entity Framework (EF) é um ORM (Object-Relational Mapper) moderno que permite aos desenvolvedores .NET trabalhar com um banco de dados usando objetos .NET. Ele elimina a necessidade de escrever a maior parte do código de acesso a dados que os desenvolvedores normalmente precisariam escrever. EF permite criar uma camada de acesso a dados limpa, portátil e de alto nível, suportando vários bancos de dados.

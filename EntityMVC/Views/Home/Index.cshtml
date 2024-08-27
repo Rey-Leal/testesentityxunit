@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
 
 <div class="text-center">
@@ -9,7 +9,7 @@
 <div class="row mb-4">
     <div class="col-md-4">
         <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" class="card-img-top opacity-50">
+            <img src="@ViewBag.Imagem1" class="card-img-top opacity-50 h-50">
             <div class="card-body">
                 <p class="card-text">
                     O Entity Framework é um mapeador moderno de relação de objetos que permite criar uma camada de acesso a dados limpa,
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-4">
         <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" class="card-img-top opacity-50">
+            <img src="@ViewBag.Imagem2" class="card-img-top opacity-50 h-50">
             <div class="card-body">
                 <p class="card-text mb-auto">
                     Incluindo o Banco de Dados SQL (local e o Azure), SQLite, MySQL, PostgreSQL e Azure Cosmos DB.
@@ -31,7 +31,7 @@
     </div>
     <div class="col-md-4">
         <div class="card h-100">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" class="card-img-top opacity-50">
+            <img src="@ViewBag.Imagem3" class="card-img-top opacity-50 h-50">
             <div class="card-body">
                 <p class="card-text mb-auto">
                     Nesta aplicação temoms um CRUD completo das Classes Grupo, Produto e Usuário, persistidos em uma base de dados SQL, e utilizando
