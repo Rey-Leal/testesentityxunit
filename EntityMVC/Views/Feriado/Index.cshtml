@@ -1,0 +1,70 @@
+﻿@model List<EntityMVC.Api.ApiNagerDateResponse>
+
+@{    
+    ViewData["Title"] = "Lista de Feriados";
+}
+
+<h1>Lista de Feriados @ViewBag.Ano</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Nome Local</th>
+            <th>Nome</th>
+            <th>País</th>
+            <th>Lançamento</th>
+            <th>Estados</th>
+            <th>Tipos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var feriado in Model)
+        {
+            if (feriado != null)
+            {
+                <tr>
+                    <td>@feriado.Data.ToString("dd/MM/yyyy")</td>
+                    <td>@feriado.NomeLocal</td>
+                    <td>@feriado.Nome</td>
+                    <td>@feriado.Pais</td>
+                    <td>@(feriado.AnoDeLancamento.HasValue ? feriado.AnoDeLancamento.ToString() : "N/A")</td>
+                    <td>
+                        @if (feriado.Estados != null && feriado.Estados.Any())
+                        {
+                            @foreach (var estado in feriado.Estados)
+                            {
+                                @estado
+                                <br />
+                            }
+                        }
+                        else
+                        {
+                            @:N/A
+                        }
+                    </td>
+                    <td>
+                        @if (feriado.Tipos != null && feriado.Tipos.Any())
+                        {
+                            @foreach (var tipo in feriado.Tipos)
+                            {
+                                @tipo
+                                <br />
+                            }
+                        }
+                        else
+                        {
+                            @:N/A
+                        }
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7">Dados indisponíveis</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,37 +1,39 @@
 ﻿
-using Azure;
-using Newtonsoft.Json;
 using System.Net.Http.Headers;
 
 namespace EntityMVC.Api
 {
-    public class ApiDog
+    // API de imagens aleatórias
+    public class ApiPicsum
     {
         private static HttpClient client = new HttpClient();
         private static HttpResponseMessage response = new HttpResponseMessage();
+        
         private static void DefinirHeadersHttp()
         {
             if (client.BaseAddress == null)
             {
-                client.BaseAddress = new Uri("https://dog.ceo/api/");
+                client.BaseAddress = new Uri("https://picsum.photos/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             }
         }
 
-        public static async Task<string> GetDog()
+        public static async Task<string> GetPicsumImage()
         {
-            string dog = null;
+            string image = null;
+            int largura = 300;
+            int altura = 200;
+
             DefinirHeadersHttp();
-            response = await client.GetAsync("breeds/image/random");
+            response = await client.GetAsync($"{largura}/{altura}");
+
             if (response.IsSuccessStatusCode)
             {
-                string body = await response.Content.ReadAsStringAsync();
-                ApiResponse apiResponse = JsonConvert.DeserializeObject<ApiResponse>(body);
-                dog = apiResponse.Message;
+                // Essa API retorna uma imagem diretamente no ResponseUri
+                image = response.RequestMessage.RequestUri.ToString();
             }
-            return dog;
+            return image;
         }
-
     }
 }

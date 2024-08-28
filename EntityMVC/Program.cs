@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Session;
-
 using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using EntityMVC.Data;

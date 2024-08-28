@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace EntityMVC.Api
 {
-    public class ApiResponse
+    public class ApiDogCeoResponse
     {
         [JsonProperty("message")]
         public string Message { get; set; }

@@ -5,10 +5,16 @@
 ## Introdução
 Projeto .NET estruturado através da Arquitetura MVC e demonstra a implementação de operações CRUD (Create, Read, Update, Delete) 
 persistidas em uma base de dados SQL Server através do Entity Framework.
-TDD desenvolvido através do uso de testes unitários utilizando xUnit.
+
+TDD desenvolvido através do uso de testes unitários xUnit.
+
 Também possui aplicação de interface login segura, bloqueando qualquer tentativa de acesso indevido ou forçado, bem como uso de Filters e BaseControllers.
+
 Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblioteca de ícones.
-AS imagens da tela inicial são obtidas randomicamente de forma assíncrona através do acesso a API Dog.Ceo.
+
+Listagem de feriados nacionais obtidos através da API externa Nager Date.
+
+Imagens da tela inicial obtidas randomicamente de forma assíncrona através de APIs externas variadas.
 
 ### Tecnologias Utilizadas:
 * .NET

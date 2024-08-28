@@ -4,12 +4,6 @@ using EntityMVC.Api;
 using EntityMVC.Data;
 using EntityMVC.Models;
 
-// Testes API
-using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using System.IO;
-using System.Drawing;
-
 namespace EntityMVC.Controllers
 {
     public class HomeController : BaseController
@@ -25,10 +19,10 @@ namespace EntityMVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // Imagens randomicas da API Dog.Ceo                        
-            ViewBag.Imagem1 = await ApiDog.GetDog();
-            ViewBag.Imagem2 = await ApiDog.GetDog();
-            ViewBag.Imagem3 = await ApiDog.GetDog();
+            // Imagens randomicas das APIs Picsum e DogCeo                        
+            ViewBag.Imagem1 = await ApiPicsum.GetPicsumImage();
+            ViewBag.Imagem2 = await ApiDogCeo.GetDogImage();
+            ViewBag.Imagem3 = await ApiPicsum.GetPicsumImage();
             return View();
         }
 
