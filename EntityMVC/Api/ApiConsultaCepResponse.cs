@@ -6,44 +6,52 @@ namespace EntityMVC.Api
     {
         public ApiConsultaCepResponse() { }
 
-        public ApiConsultaCepResponse(string cep, string tipoCep, string subTipoCep, string uf, string cidade, string bairro, string endereco, string complemento, string codigoIBGE)
+        public ApiConsultaCepResponse(string cep, string logradouro, string complemento, string unidade, string bairro, string cidade, string uf, string ibge, string gia, string ddd, string siafi)
         {
             Cep = cep;
-            TipoCep = tipoCep;
-            SubTipoCep = subTipoCep;
-            Uf = uf;
-            Cidade = cidade;
-            Bairro = bairro;
-            Endereco = endereco;
+            Logradouro = logradouro;
             Complemento = complemento;
-            CodigoIBGE = codigoIBGE;
+            Unidade = unidade;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            IBGE = ibge;
+            Gia = gia;
+            DDD = ddd;
+            Siafi = siafi;
         }
 
         [JsonProperty("cep")]
-        public String Cep { get; set; }
+        public String Cep { get; set; } = "NA";
 
-        [JsonProperty("tipoCep")]
-        public String TipoCep { get; set; }
-
-        [JsonProperty("subTipoCep")]
-        public String SubTipoCep { get; set; }
-
-        [JsonProperty("uf")]
-        public String Uf { get; set; }
-
-        [JsonProperty("cidade")]
-        public String Cidade { get; set; }
-
-        [JsonProperty("bairro")]
-        public String Bairro { get; set; }
-
-        [JsonProperty("endereco")]
-        public String Endereco { get; set; }
+        [JsonProperty("logradouro")]
+        public String Logradouro { get; set; } = "NA";
 
         [JsonProperty("complemento")]
-        public String Complemento { get; set; }
+        public String Complemento { get; set; } = "NA";
 
-        [JsonProperty("codigoIBGE")]
-        public String CodigoIBGE { get; set; }
+        [JsonProperty("unidade")]
+        public String Unidade { get; set; } = "NA";
+
+        [JsonProperty("bairro")]
+        public String Bairro { get; set; } = "NA";
+
+        [JsonProperty("localidade")]
+        public String Cidade { get; set; } = "NA";
+
+        [JsonProperty("uf")]
+        public String Uf { get; set; } = "NA";
+
+        [JsonProperty("ibge")]
+        public String IBGE { get; set; } = "NA";
+
+        [JsonProperty("gia")]
+        public String Gia { get; set; } = "NA";
+
+        [JsonProperty("ddd")]
+        public String DDD { get; set; } = "NA";
+
+        [JsonProperty("siafi")]
+        public String Siafi { get; set; } = "NA";
     }
 }

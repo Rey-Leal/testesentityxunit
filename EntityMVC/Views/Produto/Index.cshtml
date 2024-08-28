@@ -70,3 +70,10 @@
         }
     </tbody>
 </table>
+@if (ViewBag.MensagemDeErro != null)
+{
+    <br />
+    <div class="alert alert-danger">
+        @ViewBag.MensagemDeErro
+    </div>
+}

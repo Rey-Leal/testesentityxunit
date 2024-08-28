@@ -24,17 +24,23 @@ namespace EntityMVC.Api
             List<ApiNagerDateResponse> feriados = new List<ApiNagerDateResponse>();
             string pais = "BR";
 
-            DefinirHeadersHttp();
-            response = await client.GetAsync($"{ano}/{pais}");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                // Essa API retorna um corpo completo com tipo ApiNagerDateResponse
-                var json = await response.Content.ReadAsStringAsync();
-                feriados = JsonConvert.DeserializeObject<List<ApiNagerDateResponse>>(json) ?? new List<ApiNagerDateResponse>();
+                DefinirHeadersHttp();
+                response = await client.GetAsync($"{ano}/{pais}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Essa API retorna um corpo completo com tipo ApiNagerDateResponse
+                    var json = await response.Content.ReadAsStringAsync();
+                    feriados = JsonConvert.DeserializeObject<List<ApiNagerDateResponse>>(json) ?? new List<ApiNagerDateResponse>();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
             return feriados;
         }
-
     }
 }

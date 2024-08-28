@@ -12,7 +12,9 @@ Também possui aplicação de interface login segura, bloqueando qualquer tentat
 
 Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblioteca de ícones.
 
-Listagem de feriados nacionais obtidos através da API externa Nager Date.
+Consulta de feriados nacionais obtidos através da API externa Nager.Date.
+
+Consulta CEP através da API externa ViaCEP.
 
 Imagens da tela inicial obtidas randomicamente de forma assíncrona através de APIs externas variadas.
 
@@ -27,7 +29,8 @@ Imagens da tela inicial obtidas randomicamente de forma assíncrona através de 
 * Bootstrap
 
 ### TODO
-Nas próximas etapas serão desenvolvidos neste projeto: 
+Nas próximas etapas serão desenvolvidos neste projeto:
+* Consulta de CEP através da API do Governo Federal
 * Controle e armazenamento de Log de acesso através do MongoDB
 
 ## O que é o Entity Framework?

@@ -7,7 +7,7 @@ namespace EntityMVC.Api
     {
         private static HttpClient client = new HttpClient();
         private static HttpResponseMessage response = new HttpResponseMessage();
-        
+
         private static void DefinirHeadersHttp()
         {
             if (client.BaseAddress == null)
@@ -24,13 +24,20 @@ namespace EntityMVC.Api
             int largura = 300;
             int altura = 200;
 
-            DefinirHeadersHttp();
-            response = await client.GetAsync($"{largura}/{altura}");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                // Essa API retorna uma imagem diretamente no ResponseUri
-                image = response.RequestMessage.RequestUri.ToString();
+                DefinirHeadersHttp();
+                response = await client.GetAsync($"{largura}/{altura}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Essa API retorna uma imagem diretamente no ResponseUri
+                    image = response.RequestMessage.RequestUri.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
             return image;
         }

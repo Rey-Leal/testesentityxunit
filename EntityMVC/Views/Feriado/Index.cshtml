@@ -1,10 +1,10 @@
 ﻿@model List<EntityMVC.Api.ApiNagerDateResponse>
 
-@{    
-    ViewData["Title"] = "Lista de Feriados";
+@{
+    ViewData["Title"] = "Feriados Nacionais";
 }
 
-<h1>Lista de Feriados @ViewBag.Ano</h1>
+<h1>Feriados Nacionais @ViewBag.Ano</h1>
 
 <table class="table table-striped">
     <thead>
@@ -68,3 +68,10 @@
         }
     </tbody>
 </table>
+@if (ViewBag.MensagemDeErro != null)
+{
+    <br />
+    <div class="alert alert-danger">
+        @ViewBag.MensagemDeErro
+    </div>
+}

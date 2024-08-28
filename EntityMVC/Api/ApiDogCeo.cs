@@ -23,15 +23,22 @@ namespace EntityMVC.Api
         {
             string image = null;
 
-            DefinirHeadersHttp();
-            response = await client.GetAsync("breeds/image/random");
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                // Essa API retorna message e status
-                string json = await response.Content.ReadAsStringAsync();
-                ApiDogCeoResponse apiDogCeoResponse = JsonConvert.DeserializeObject<ApiDogCeoResponse>(json);
-                image = apiDogCeoResponse.Message;
+                DefinirHeadersHttp();
+                response = await client.GetAsync("breeds/image/random");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Essa API retorna message e status
+                    string json = await response.Content.ReadAsStringAsync();
+                    ApiDogCeoResponse apiDogCeoResponse = JsonConvert.DeserializeObject<ApiDogCeoResponse>(json);
+                    image = apiDogCeoResponse.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
             return image;
         }

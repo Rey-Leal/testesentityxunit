@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
+using NuGet.Common;
 using System.Net.Http.Headers;
 
 namespace EntityMVC.Api
 {
-    // API de feriados nacionais
+    // API de consulta de Endereços via CEP
     public class ApiConsultaCep
     {
         private static HttpClient client = new HttpClient();
@@ -13,27 +14,33 @@ namespace EntityMVC.Api
         {
             if (client.BaseAddress == null)
             {
-                client.BaseAddress = new Uri("https://date.nager.at/api/v3/PublicHolidays/");
+                client.BaseAddress = new Uri("https://viacep.com.br/ws/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             }
         }
 
-        public static async Task<List<ApiNagerDateResponse>> GetEndereco(int ano)
+        public static async Task<ApiConsultaCepResponse> GetEndereco(string cep)
         {
-            List<ApiNagerDateResponse> feriados = new List<ApiNagerDateResponse>();
-            string pais = "BR";
-
-            DefinirHeadersHttp();
-            response = await client.GetAsync($"{ano}/{pais}");
-
-            if (response.IsSuccessStatusCode)
+            ApiConsultaCepResponse endereco = new ApiConsultaCepResponse();
+            
+            try
             {
-                // Essa API retorna um corpo completo com tipo ApiNagerDateResponse
-                var json = await response.Content.ReadAsStringAsync();
-                feriados = JsonConvert.DeserializeObject<List<ApiNagerDateResponse>>(json) ?? new List<ApiNagerDateResponse>();
+                DefinirHeadersHttp();                                
+                response = await client.GetAsync($"consulta/cep/{cep}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Essa API retorna um corpo completo com tipo ApiConsultaCepResponse
+                    var json = await response.Content.ReadAsStringAsync();
+                    endereco = JsonConvert.DeserializeObject<ApiConsultaCepResponse>(json) ?? new ApiConsultaCepResponse();
+                }
             }
-            return feriados;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return endereco;
         }
 
     }
