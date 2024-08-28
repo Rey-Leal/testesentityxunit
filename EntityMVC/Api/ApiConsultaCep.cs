@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 namespace EntityMVC.Api
 {
     // API de feriados nacionais
-    public class ApiNagerDate
+    public class ApiConsultaCep
     {
         private static HttpClient client = new HttpClient();
         private static HttpResponseMessage response = new HttpResponseMessage();
@@ -19,7 +19,7 @@ namespace EntityMVC.Api
             }
         }
 
-        public static async Task<List<ApiNagerDateResponse>> GetFeriados(int ano)
+        public static async Task<List<ApiNagerDateResponse>> GetEndereco(int ano)
         {
             List<ApiNagerDateResponse> feriados = new List<ApiNagerDateResponse>();
             string pais = "BR";

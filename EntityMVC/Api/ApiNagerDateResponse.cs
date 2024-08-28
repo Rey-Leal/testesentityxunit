@@ -1,6 +1,4 @@
-﻿
-using Microsoft.Identity.Client;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace EntityMVC.Api
 {
