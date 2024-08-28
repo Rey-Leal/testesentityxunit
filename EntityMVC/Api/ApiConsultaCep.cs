@@ -23,11 +23,11 @@ namespace EntityMVC.Api
         public static async Task<ApiConsultaCepResponse> GetEndereco(string cep)
         {
             ApiConsultaCepResponse endereco = new ApiConsultaCepResponse();
-            
+
             try
             {
-                DefinirHeadersHttp();                                
-                response = await client.GetAsync($"consulta/cep/{cep}");
+                DefinirHeadersHttp();
+                response = await client.GetAsync($"{cep}/json/");
 
                 if (response.IsSuccessStatusCode)
                 {
