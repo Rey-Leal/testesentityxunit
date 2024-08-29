@@ -1,0 +1,64 @@
+﻿@model EntityMVC.Api.ApiConsultaCepResponse
+
+@{
+    ViewData["Title"] = "Endereço";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.Cep)</th>
+                <th scope="col">@Html.DisplayFor(model => model.Cep)</th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Logradouro)</td>
+                <td>@Html.DisplayFor(model => model.Logradouro)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Unidade)</td>
+                <td>@Html.DisplayFor(model => model.Unidade)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Bairro)</td>
+                <td>@Html.DisplayFor(model => model.Bairro)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Cidade)</td>
+                <td>@Html.DisplayFor(model => model.Cidade)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Uf)</td>
+                <td>@Html.DisplayFor(model => model.Uf)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.IBGE)</td>
+                <td>@Html.DisplayFor(model => model.IBGE)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Gia)</td>
+                <td>@Html.DisplayFor(model => model.Gia)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.DDD)</td>
+                <td>@Html.DisplayFor(model => model.DDD)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Siafi)</td>
+                <td>@Html.DisplayFor(model => model.Siafi)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.MensagemDeErro != null)
+{
+    <br />
+    <div class="alert alert-danger">
+        @ViewBag.MensagemDeErro
+    </div>
+}

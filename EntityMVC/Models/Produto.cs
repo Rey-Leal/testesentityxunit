@@ -1,6 +1,4 @@
-﻿
-using Microsoft.CodeAnalysis.Host.Mef;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityMVC.Models

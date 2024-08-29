@@ -6,17 +6,12 @@
 Projeto .NET estruturado através da Arquitetura MVC e demonstra a implementação de operações CRUD (Create, Read, Update, Delete) 
 persistidas em uma base de dados SQL Server através do Entity Framework.
 
-TDD desenvolvido através do uso de testes unitários xUnit.
-
-Também possui aplicação de interface login segura, bloqueando qualquer tentativa de acesso indevido ou forçado, bem como uso de Filters e BaseControllers.
-
-Para design do frontend foi utilizado o framework visual Bootstrap e sua bliblioteca de ícones.
-
-Consulta de feriados nacionais obtidos através da API externa Nager.Date.
-
-Consulta CEP através da API externa ViaCEP.
-
-Imagens da tela inicial obtidas randomicamente de forma assíncrona através de APIs externas variadas.
+* TDD desenvolvido através do uso de testes unitários xUnit.
+* Aplicação de interface login segura, bloqueando qualquer tentativa de acesso indevido ou forçado, bem como uso de Filters e BaseControllers.
+* Design do frontend com o framework visual Bootstrap e sua bliblioteca de ícones.
+* Consulta de Feriados Nacionais obtidos através da API externa Nager.Date.
+* Consulta de Endereços através da API externa ViaCEP.
+* Imagens obtidas randomicamente de forma assíncrona através de APIs externas variadas.
 
 ### Tecnologias Utilizadas:
 * .NET
@@ -28,9 +23,8 @@ Imagens da tela inicial obtidas randomicamente de forma assíncrona através de 
 * Filters e BaseControllers
 * Bootstrap
 
-### TODO
+### TO-DO
 Nas próximas etapas serão desenvolvidos neste projeto:
-* Consulta de CEP através da API do Governo Federal
 * Controle e armazenamento de Log de acesso através do MongoDB
 
 ## O que é o Entity Framework?
@@ -40,10 +34,15 @@ O Entity Framework (EF) é um ORM (Object-Relational Mapper) moderno que permite
 O padrão MVC (Model-View-Controller) no .NET Core organiza aplicações em três componentes principais: Modelos (dados e lógica de negócios), Visões (interface do usuário), e Controladores (processamento de requisições e ligação entre Modelos e Visões). Isso facilita a separação de responsabilidades e a manutenção do código.
 
 ## Estrutura do Projeto
-O projeto está organizado da seguinte forma:
+O projeto principal está organizado da seguinte forma:
 * **Models**: Contém as classes de modelo que representam as tabelas do banco de dados.
 * **Data**: Contém o contexto do EF, que gerencia a conexão com o banco de dados e a configuração dos modelos.
 * **Views**: Interface do usuário para interagir com os dados.
+* **Filters**: Contém as classes de filtros globais da aplicação.
+* **Api**: Classes dos objetos das APIs e arquivos de acesso aos endpoints das APIs externas utilizadas.
+
+O projeto de testes está organizado da seguinte forma:
+* **Raiz**: Contém as classes para testes unitários do projeto principal.
 
 ## Funcionalidades
 * **Create**: Adicionar novos registros ao banco de dados.
