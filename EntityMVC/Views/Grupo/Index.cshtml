@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.descricao)
+                @Html.DisplayNameFor(model => model.Descricao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.especificacao)
+                @Html.DisplayNameFor(model => model.Especificacao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.tipo)
+                @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th></th>
         </tr>
@@ -29,22 +29,22 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.descricao)
+                    @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.especificacao)
+                    @Html.DisplayFor(modelItem => item.Especificacao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.tipo)
+                    @Html.DisplayFor(modelItem => item.Tipo)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-sm btn-success">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">
                         <i class="bi bi-pencil"></i>
                     </a>
-                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-primary">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
                         <i class="bi bi-info-circle"></i>
                     </a>
-                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
                         <i class="bi bi-trash"></i>
                     </a>
                 </td>

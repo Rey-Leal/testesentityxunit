@@ -13,7 +13,7 @@ namespace EntityMVC.Filters
             {
                 bool usuarioLogado = controller.HttpContext.Session.GetString("usuarioLogadoID") != null;
 
-                // Valida se Action é de Login para evitar loop infinito do Filter
+                // Valida se Action é de Login evitando loop infinito do Filter
                 var acaoDaChamada = context.ActionDescriptor.DisplayName;
                 bool acaoDeLogin = acaoDaChamada.Contains("Login");
 

@@ -18,7 +18,7 @@ namespace EntityMVC.Controllers
         // GET: Produto
         public async Task<IActionResult> Index()
         {
-            var context = _context.Produto.Include(p => p.grupo);
+            var context = _context.Produto.Include(p => p.Grupo);
             return View(await context.ToListAsync());
         }
 
@@ -31,8 +31,8 @@ namespace EntityMVC.Controllers
             }
 
             var produto = await _context.Produto
-                .Include(p => p.grupo)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .Include(p => p.Grupo)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace EntityMVC.Controllers
         // GET: Produto/Create
         public IActionResult Create()
         {
-            ViewData["grupoId"] = new SelectList(_context.Grupo, "id", "descricao");
+            ViewData["grupoId"] = new SelectList(_context.Grupo, "Id", "Descricao");
             return View();
         }
 
@@ -53,7 +53,7 @@ namespace EntityMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,grupoId,nome,especificacao,unidade,preco,quantidade")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,GrupoId,Nome,Especificacao,Unidade,Preco,Quantidade")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace EntityMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["grupoId"] = new SelectList(_context.Grupo, "id", "descricao", produto.grupoId);
+            ViewData["grupoId"] = new SelectList(_context.Grupo, "Id", "Descricao", produto.GrupoId);
             return View(produto);
         }
 
@@ -78,7 +78,7 @@ namespace EntityMVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["grupoId"] = new SelectList(_context.Grupo, "id", "descricao", produto.grupoId);
+            ViewData["grupoId"] = new SelectList(_context.Grupo, "Id", "Descricao", produto.GrupoId);
             return View(produto);
         }
 
@@ -87,9 +87,9 @@ namespace EntityMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,grupoId,nome,especificacao,unidade,preco,quantidade")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,GrupoId,Nome,Especificacao,Unidade,Preco,Quantidade")] Produto produto)
         {
-            if (id != produto.id)
+            if (id != produto.Id)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EntityMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProdutoExists(produto.id))
+                    if (!ProdutoExists(produto.Id))
                     {
                         return NotFound();
                     }
@@ -114,7 +114,7 @@ namespace EntityMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["grupoId"] = new SelectList(_context.Grupo, "id", "descricao", produto.grupoId);
+            ViewData["grupoId"] = new SelectList(_context.Grupo, "Id", "Descricao", produto.GrupoId);
             return View(produto);
         }
 
@@ -127,8 +127,8 @@ namespace EntityMVC.Controllers
             }
 
             var produto = await _context.Produto
-                .Include(p => p.grupo)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .Include(p => p.Grupo)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
                 return NotFound();
@@ -154,7 +154,7 @@ namespace EntityMVC.Controllers
 
         private bool ProdutoExists(int id)
         {
-            return _context.Produto.Any(e => e.id == id);
+            return _context.Produto.Any(e => e.Id == id);
         }
     }
 }

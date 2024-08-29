@@ -29,7 +29,7 @@ namespace EntityMVC.Controllers
             }
 
             var grupo = await _context.Grupo
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (grupo == null)
             {
                 return NotFound();
@@ -49,7 +49,7 @@ namespace EntityMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,descricao,especificacao,tipo")] Grupo grupo)
+        public async Task<IActionResult> Create([Bind("Id,Descricao,Especificacao,Tipo")] Grupo grupo)
         {
             if (ModelState.IsValid)
             {
@@ -81,9 +81,9 @@ namespace EntityMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,descricao,especificacao,tipo")] Grupo grupo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,Especificacao,Tipo")] Grupo grupo)
         {
-            if (id != grupo.id)
+            if (id != grupo.Id)
             {
                 return NotFound();
             }
@@ -97,7 +97,7 @@ namespace EntityMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GrupoExists(grupo.id))
+                    if (!GrupoExists(grupo.Id))
                     {
                         return NotFound();
                     }
@@ -120,7 +120,7 @@ namespace EntityMVC.Controllers
             }
 
             var grupo = await _context.Grupo
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (grupo == null)
             {
                 return NotFound();
@@ -146,7 +146,7 @@ namespace EntityMVC.Controllers
 
         private bool GrupoExists(int id)
         {
-            return _context.Grupo.Any(e => e.id == id);
+            return _context.Grupo.Any(e => e.Id == id);
         }
     }
 }

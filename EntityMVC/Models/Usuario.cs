@@ -1,6 +1,4 @@
-﻿
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityMVC.Models
@@ -10,19 +8,19 @@ namespace EntityMVC.Models
         public Usuario() { }
         public Usuario(int id, string nome, string senha, string email)
         {
-            this.id = id;
-            this.nome = nome;
-            this.senha = senha;
-            this.email = email;
-            this.dataCadastro = DateTime.Now;
+            Id = id;
+            Nome = nome;
+            Senha = senha;
+            Email = email;
+            DataCadastro = DateTime.Now;
         }
 
         [Key, Display(Name = "Id")]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         private string _nome;
         [Required, StringLength(50), Display(Name = "Nome")]
-        public string nome
+        public string Nome
         {
             get => _nome;
             set
@@ -40,7 +38,7 @@ namespace EntityMVC.Models
 
         private string _senha;
         [Required, StringLength(30), Display(Name = "Senha")]
-        public string senha
+        public string Senha
         {
             get => _senha;
             set
@@ -58,7 +56,7 @@ namespace EntityMVC.Models
 
         private string _email;
         [Required, StringLength(50), Display(Name = "Login")]
-        public string email
+        public string Email
         {
             get => _email;
             set
@@ -75,11 +73,11 @@ namespace EntityMVC.Models
         }
 
         [Display(Name = "Data de Cadastro")]
-        public DateTime dataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         public bool ValidarEmail()
         {
-            return email.Contains("@");
+            return Email.Contains("@");
         }
     }
 }

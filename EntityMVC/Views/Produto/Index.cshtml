@@ -13,22 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nome)
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.especificacao)
+                @Html.DisplayNameFor(model => model.Especificacao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.unidade)
+                @Html.DisplayNameFor(model => model.Unidade)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.preco)
+                @Html.DisplayNameFor(model => model.Preco)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.quantidade)
+                @Html.DisplayNameFor(model => model.Quantidade)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.grupo)
+                @Html.DisplayNameFor(model => model.Grupo)
             </th>
             <th></th>
         </tr>
@@ -38,31 +38,31 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.nome)
+                    @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.especificacao)
+                    @Html.DisplayFor(modelItem => item.Especificacao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.unidade)
+                    @Html.DisplayFor(modelItem => item.Unidade)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.preco)
+                    @Html.DisplayFor(modelItem => item.Preco)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.quantidade)
+                    @Html.DisplayFor(modelItem => item.Quantidade)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.grupo.descricao)
+                    @Html.DisplayFor(modelItem => item.Grupo.Descricao)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-sm btn-success">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">
                         <i class="bi bi-pencil"></i>
                     </a>
-                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-primary">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
                         <i class="bi bi-info-circle"></i>
                     </a>
-                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
                         <i class="bi bi-trash"></i>
                     </a>
                 </td>

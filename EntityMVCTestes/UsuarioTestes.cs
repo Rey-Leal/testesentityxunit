@@ -11,11 +11,11 @@ namespace EntityMVCTestes
             var _usuario = new Usuario();
 
             // Assert
-            Assert.Equal(0, _usuario.id); // Padrão 0
-            Assert.Null(_usuario.nome);
-            Assert.Null(_usuario.senha);
-            Assert.Null(_usuario.email);
-            Assert.Equal(default(DateTime), _usuario.dataCadastro);
+            Assert.Equal(0, _usuario.Id); // Padrão 0
+            Assert.Null(_usuario.Nome);
+            Assert.Null(_usuario.Senha);
+            Assert.Null(_usuario.Email);
+            Assert.Equal(default(DateTime), _usuario.DataCadastro);
         }
 
         [Fact]
@@ -24,52 +24,52 @@ namespace EntityMVCTestes
             // Arrange
             var _usuario = new Usuario
             {
-                id = 1,
-                nome = "Nome do Usuario",
-                senha = "senha",
-                email = "email@exemplo.com",
-                dataCadastro = DateTime.Now
+                Id = 1,
+                Nome = "Nome do Usuario",
+                Senha = "Senha",
+                Email = "Email@exemplo.com",
+                DataCadastro = DateTime.Now
             };
 
             // Assert
-            Assert.Equal(1, _usuario.id);
-            Assert.Equal("Nome do Usuario", _usuario.nome);
-            Assert.Equal("senha", _usuario.senha);
-            Assert.Equal("email@exemplo.com", _usuario.email);
-            Assert.Equal(DateTime.Today, _usuario.dataCadastro.Date);
+            Assert.Equal(1, _usuario.Id);
+            Assert.Equal("Nome do Usuario", _usuario.Nome);
+            Assert.Equal("Senha", _usuario.Senha);
+            Assert.Equal("Email@exemplo.com", _usuario.Email);
+            Assert.Equal(DateTime.Today, _usuario.DataCadastro.Date);
         }
 
         [Fact]
         public void Email_TamanhoMaiorQue50_DeveLancarException()
         {
             // Arrange
-            var usuario = new Usuario();
+            var _usuario = new Usuario();
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => usuario.email = "123456789012345678901234567890123456789012345678901");
+            Assert.Throws<ArgumentException>(() => _usuario.Email = "123456789012345678901234567890123456789012345678901");
         }
 
         [Fact]
         public void Senha_TamanhoMaiorQue30_DeveLancarException()
         {
             // Arrange
-            var usuario = new Usuario();
+            var _usuario = new Usuario();
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => usuario.senha = "1234567890123456789012345678901");
+            Assert.Throws<ArgumentException>(() => _usuario.Senha = "1234567890123456789012345678901");
         }
 
         [Theory]
         [InlineData("usuario@exemplo.com", true)]
         [InlineData("usuario#exemplo.com", false)]
         [InlineData("usuario.com", false)]
-        public void ValidarEmail_DeveRetornarResultadosEsperados(string email, bool resultadoEsperado)
+        public void ValIdarEmail_DeveRetornarResultadosEsperados(string Email, bool resultadoEsperado)
         {
             // Arrange
-            var usuario = new Usuario(1, "Teste", "Senha123", email);
+            var _usuario = new Usuario(1, "Teste", "Senha123", Email);
 
             // Act
-            bool resultado = usuario.ValidarEmail();
+            bool resultado = _usuario.ValidarEmail();
 
             // Assert
             Assert.Equal(resultadoEsperado, resultado);

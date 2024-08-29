@@ -48,16 +48,16 @@ namespace EntityMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Usuario usuario)
         {
-            if (usuario.email != null && usuario.senha != null)
+            if (usuario.Email != null && usuario.Senha != null)
             {
                 try
                 {
                     // Validação
-                    var validaLogin = _context.Usuario.Where(a => a.email.Equals(usuario.email) && a.senha.Equals(usuario.senha)).FirstOrDefault();
+                    var validaLogin = _context.Usuario.Where(a => a.Email.Equals(usuario.Email) && a.Senha.Equals(usuario.Senha)).FirstOrDefault();
                     if (validaLogin != null)
                     {
-                        HttpContext.Session.SetString("usuarioLogadoID", validaLogin.id.ToString());
-                        HttpContext.Session.SetString("nomeUsuarioLogado", validaLogin.email);
+                        HttpContext.Session.SetString("usuarioLogadoID", validaLogin.Id.ToString());
+                        HttpContext.Session.SetString("nomeUsuarioLogado", validaLogin.Email);
                         return RedirectToAction("Index");
                     }
                     else
