@@ -5,13 +5,13 @@ using EntityMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Context
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Context") ?? throw new InvalidOperationException("Connection string 'Context' not found.")));
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add Session
+// Sessão
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(60);
@@ -21,7 +21,7 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
-// Configurando a cultura padrão para pt-BR
+// Cultura padrão pt-BR
 var defaultCulture = new CultureInfo("pt-BR");
 var localizationOptions = new RequestLocalizationOptions
 {
@@ -30,10 +30,10 @@ var localizationOptions = new RequestLocalizationOptions
     SupportedUICultures = new[] { defaultCulture }
 };
 
-// Aplicando as configurações de localização
+// Configurações de localização
 app.UseRequestLocalization(localizationOptions);
 
-// Configure the HTTP request pipeline.
+// HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -42,6 +42,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -50,6 +51,7 @@ app.UseSession();
 
 app.UseAuthorization();
 
+// Rotas
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Login}/{id?}");
