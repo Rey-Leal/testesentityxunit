@@ -2,7 +2,7 @@ using EntityMVC.Models;
 
 namespace EntityMVCTestes
 {
-    public class UsuarioTestes
+    public class UsuarioTest
     {        
         [Fact]
         public void Construtor_Atributos_DeveTerValoresPadrao()
